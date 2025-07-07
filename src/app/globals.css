@@ -1,327 +1,155 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap');
 
-@layer base {
-  :root {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
 
-    --primary: 250 67% 63%;
-    --primary-foreground: 0 0% 100%;
+:root {
+  /* Green Theme (Default) */
+  --primary-50: 240 253 244;
+  --primary-100: 220 252 231;
+  --primary-200: 187 247 208;
+  --primary-300: 134 239 172;
+  --primary-400: 74 222 128;
+  --primary-500: 34 197 94;
+  --primary-600: 22 163 74;
+  --primary-700: 21 128 61;
+  --primary-800: 22 101 52;
+  --primary-900: 20 83 45;
 
-    --secondary: 35 95% 60%;
-    --secondary-foreground: 0 0% 100%;
+  --secondary-50: 248 250 252;
+  --secondary-100: 241 245 249;
+  --secondary-200: 226 232 240;
+  --secondary-300: 203 213 225;
+  --secondary-400: 148 163 184;
+  --secondary-500: 100 116 139;
+  --secondary-600: 71 85 105;
+  --secondary-700: 51 65 85;
+  --secondary-800: 30 41 59;
+  --secondary-900: 15 23 42;
 
-    --accent: 280 79% 55%;
-    --accent-foreground: 0 0% 100%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --card: 222 47% 15%;
-    --card-foreground: 210 40% 98%;
-
-    --border: 217 33% 25%;
-    --input: 217 33% 22%;
-    --ring: 250 67% 63%;
-  }
-
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-
-    --primary: 250 67% 63%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 35 95% 60%;
-    --secondary-foreground: 0 0% 100%;
-
-    --accent: 280 79% 55%;
-    --accent-foreground: 0 0% 100%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --card: 222 47% 15%;
-    --card-foreground: 210 40% 98%;
-
-    --border: 217 33% 25%;
-    --input: 217 33% 22%;
-    --ring: 250 67% 63%;
-  }
+  --accent-50: 236 253 245;
+  --accent-100: 209 250 229;
+  --accent-200: 167 243 208;
+  --accent-300: 110 231 183;
+  --accent-400: 52 211 153;
+  --accent-500: 16 185 129;
+  --accent-600: 5 150 105;
+  --accent-700: 4 120 87;
+  --accent-800: 6 95 70;
+  --accent-900: 6 78 59;
 }
+
+/* Red Theme */
+.theme-red {
+  --primary-50: 255 241 242;
+  --primary-100: 255 228 230;
+  --primary-200: 254 205 211;
+  --primary-300: 253 164 175;
+  --primary-400: 251 113 133;
+  --primary-500: 244 63 94;
+  --primary-600: 225 29 72;
+  --primary-700: 190 18 60;
+  --primary-800: 159 18 57;
+  --primary-900: 136 19 55;
+
+  --secondary-50: 240 249 255;
+  --secondary-100: 224 242 254;
+  --secondary-200: 186 230 253;
+  --secondary-300: 125 211 252;
+  --secondary-400: 56 189 248;
+  --secondary-500: 14 165 233;
+  --secondary-600: 2 132 199;
+  --secondary-700: 3 105 161;
+  --secondary-800: 7 89 133;
+  --secondary-900: 12 74 110;
+
+  --accent-50: 254 252 232;
+  --accent-100: 254 249 195;
+  --accent-200: 254 240 138;
+  --accent-300: 253 224 71;
+  --accent-400: 250 204 21;
+  --accent-500: 234 179 8;
+  --accent-600: 202 138 4;
+  --accent-700: 161 98 7;
+  --accent-800: 133 77 14;
+  --accent-900: 113 63 18;
+}
+
+/* Blue Theme */
+.theme-blue {
+  --primary-50: 239 246 255;
+  --primary-100: 219 234 254;
+  --primary-200: 191 219 254;
+  --primary-300: 147 197 253;
+  --primary-400: 96 165 250;
+  --primary-500: 59 130 246;
+  --primary-600: 37 99 235;
+  --primary-700: 29 78 216;
+  --primary-800: 30 64 175;
+  --primary-900: 30 58 138;
+
+  --secondary-50: 236 254 255;
+  --secondary-100: 207 250 254;
+  --secondary-200: 165 243 252;
+  --secondary-300: 103 232 249;
+  --secondary-400: 34 211 238;
+  --secondary-500: 6 182 212;
+  --secondary-600: 8 145 178;
+  --secondary-700: 14 116 144;
+  --secondary-800: 21 94 117;
+  --secondary-900: 22 78 99;
+
+  --accent-50: 254 242 242;
+  --accent-100: 254 226 226;
+  --accent-200: 254 202 202;
+  --accent-300: 252 165 165;
+  --accent-400: 248 113 113;
+  --accent-500: 239 68 68;
+  --accent-600: 220 38 38;
+  --accent-700: 185 28 28;
+  --accent-800: 153 27 27;
+  --accent-900: 127 29 29;
+}
+
+/* Yellow Theme */
+.theme-yellow {
+  --primary-50: 255 251 235;
+  --primary-100: 254 243 199;
+  --primary-200: 253 230 138;
+  --primary-300: 252 211 77;
+  --primary-400: 251 191 36;
+  --primary-500: 245 158 11;
+  --primary-600: 217 119 6;
+  --primary-700: 180 83 9;
+  --primary-800: 146 64 14;
+  --primary-900: 120 53 15;
+
+  --secondary-500: 245 158 11;
+  --accent-500: 244 114 182;
+}
+
+/* Dark Theme */
+.theme-dark {
+ --primary-50: 236 254 255;
+  --primary-100: 207 250 254;
+  --primary-200: 165 243 252;
+  --primary-300: 103 232 249;
+  --primary-400: 34 211 238;
+  --primary-500: 6 182 212;
+  --primary-600: 8 145 178;
+  --primary-700: 14 116 144;
+  --primary-800: 21 94 117;
+  --primary-900: 22 78 99;
+
+  --secondary-500: 236 72 153;     /* Vibrant pink */
+  --accent-500: 168 85 247;  
+}
+
+
 
 body {
-  @apply bg-background text-foreground;
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-}
-
-@layer components {
-  .btn-primary {
-    @apply bg-primary text-primary-foreground px-4 py-2 rounded-md shadow-sm hover:opacity-90 transition-all duration-200 transform hover:scale-[1.02];
-  }
-
-  .btn-secondary {
-    @apply bg-secondary text-secondary-foreground px-4 py-2 rounded-md shadow-sm hover:opacity-90 transition-all duration-200 transform hover:scale-[1.02];
-  }
-
-  .btn-outline {
-    @apply border border-border px-4 py-2 rounded-md shadow-sm hover:bg-card/80 transition-all duration-200 transform hover:scale-[1.02];
-  }
-
-  .btn-gradient {
-    @apply bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-[1.02];
-  }
-
-  .btn-accent {
-    @apply bg-accent text-accent-foreground px-4 py-2 rounded-md shadow-sm hover:opacity-90 transition-all duration-200 transform hover:scale-[1.02];
-  }
-
-  .card {
-    @apply rounded-xl shadow-md bg-card p-6 hover:shadow-lg transition-all duration-300 border border-border;
-  }
-
-  .input {
-    @apply w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring bg-card text-foreground;
-  }
-
-  .form-group {
-    @apply flex flex-col gap-1 mb-4;
-  }
-
-  .label {
-    @apply text-sm font-medium text-foreground;
-  }
-
-  /* Resume Builder Specific Classes */
-  .resume-section {
-    @apply bg-card backdrop-blur-sm p-6 rounded-xl shadow-md mb-6 transition-all duration-300 hover:shadow-lg border border-border;
-  }
-
-  .section-heading {
-    @apply text-xl font-semibold text-primary mb-4 flex items-center gap-2;
-  }
-
-  .skill-progress {
-    @apply h-2.5 rounded-full bg-gradient-to-r from-primary to-accent relative overflow-hidden;
-  }
-
-  .social-icon {
-    @apply text-primary hover:text-accent transition-colors duration-300;
-  }
-
-  /* Resume Template Classes */
-  .resume-header {
-    @apply bg-gradient-to-r from-primary to-accent p-6 text-white rounded-t-lg;
-  }
-
-  .resume-body {
-    @apply p-6 bg-white rounded-b-lg;
-  }
-
-  .template-header {
-    @apply bg-gradient-to-r from-primary to-accent text-white p-6 flex flex-wrap items-center justify-between;
-  }
-
-  .language-progress {
-    @apply h-2.5 rounded-full bg-gradient-to-r from-secondary to-amber-400 mt-1;
-  }
-
-  /* Glassmorphism Classes */
-  .glass {
-    @apply bg-card backdrop-blur-md border border-border shadow-lg;
-  }
-
-  .glass-dark {
-    @apply bg-black/50 backdrop-blur-md border border-border shadow-lg;
-  }
-
-  .glass-primary {
-    @apply bg-primary/10 backdrop-blur-sm border border-primary/20 shadow-lg;
-  }
-
-  .glass-card {
-    @apply glass rounded-xl transition-all duration-300 hover:shadow-xl;
-  }
-
-  /* Animation Classes */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideDown {
-    from {
-      transform: translateY(-20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideLeft {
-    from {
-      transform: translateX(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideRight {
-    from {
-      transform: translateX(-20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes scaleIn {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.7;
-    }
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.3s ease-in-out forwards;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.4s ease-out forwards;
-  }
-
-  .animate-slide-down {
-    animation: slideDown 0.4s ease-out forwards;
-  }
-
-  .animate-slide-left {
-    animation: slideLeft 0.4s ease-out forwards;
-  }
-
-  .animate-slide-right {
-    animation: slideRight 0.4s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.3s ease-out forwards;
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-pulse-slow {
-    animation: pulse 4s ease-in-out infinite;
-  }
-
-  /* Gradient Text */
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
-  }
-
-  .gradient-text-secondary {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-amber-500;
-  }
-
-  /* Glass Effect */
-  .glass-effect {
-    @apply bg-white/60 backdrop-blur-md border border-white/20 shadow-lg;
-  }
-
-  /* Button Effects */
-  .btn-hover-raise {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
-  }
-
-  /* Card Hover Effects */
-  .card-hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
-  }
-
-  /* Background gradients */
-  .bg-mesh-1 {
-    background-color: hsla(0, 100%, 50%, 1);
-    background-image: radial-gradient(
-        at 40% 20%,
-        hsla(28, 100%, 74%, 0.1) 0px,
-        transparent 50%
-      ),
-      radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.1) 0px, transparent 50%),
-      radial-gradient(
-        at 80% 50%,
-        hsla(340, 100%, 76%, 0.1) 0px,
-        transparent 50%
-      ),
-      radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 0.1) 0px, transparent 50%),
-      radial-gradient(
-        at 80% 100%,
-        hsla(242, 100%, 70%, 0.1) 0px,
-        transparent 50%
-      ),
-      radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 0.1) 0px, transparent 50%);
-  }
-
-  .bg-mesh-2 {
-    background-color: hsl(var(--background));
-    background-image: radial-gradient(
-        at 0% 0%,
-        hsl(var(--primary) / 10%) 0,
-        transparent 50%
-      ),
-      radial-gradient(at 100% 0%, hsl(var(--accent) / 5%) 0, transparent 50%),
-      radial-gradient(
-        at 100% 100%,
-        hsl(var(--secondary) / 10%) 0,
-        transparent 50%
-      ),
-      radial-gradient(at 0% 100%, hsl(var(--primary) / 5%) 0, transparent 50%);
-  }
+  font-family: 'Satoshi', sans-serif;
+}h1,h2,h3,h4,h5,h6{
+font-family: 'Satoshi', sans-serif;
 }
