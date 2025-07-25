@@ -1,21 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Transpile the undici package to avoid private class fields issues
-  transpilePackages: ["undici"],
-
-  // Configure webpack if needed
-  webpack: (config) => {
-    config.externals = [
-      ...(config.externals || []),
-      { undici: "commonjs undici" },
-    ];
-    return config;
-  },
-
-  // Enable images from external domains if needed
+ 
   images: {
-    domains: ["firebasestorage.googleapis.com"],
-  },
+    domains: [
+      'images.unsplash.com',
+      'avatars.githubusercontent.com',
+      'lh3.googleusercontent.com'
+    ],
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+  }
 };
 
 export default nextConfig;
