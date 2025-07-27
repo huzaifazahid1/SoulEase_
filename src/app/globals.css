@@ -2,6 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+  direction: rtl;
+  text-align: center;
+}
 
 /* Base styles */
 @layer base {

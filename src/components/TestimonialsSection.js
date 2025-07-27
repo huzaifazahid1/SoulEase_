@@ -9,7 +9,6 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
-
 /**
  * Testimonials Section Component
  * 
@@ -44,7 +43,7 @@ export default function TestimonialsSection() {
     {
       id: 2,
       name: "Omar Hassan",
-      role: "Engineering Student", 
+      role: "Engineering Student",
       university: "Stanford University",
       universityShort: "Stanford",
       quote: "Finally, a platform that understands the intersection of career anxiety and Islamic values. The guidance feels personally crafted, and the community support has been invaluable during my toughest semesters.",
@@ -59,7 +58,7 @@ export default function TestimonialsSection() {
       id: 3,
       name: "Fatima Ali",
       role: "Medical Student",
-      university: "Harvard Medical School", 
+      university: "Harvard Medical School",
       universityShort: "Harvard",
       quote: "The anonymous mood tracking with Islamic coping strategies helped me maintain balance during the most challenging semester. The AI recommendations for prayer times and spiritual practices were perfectly timed.",
       rating: 5,
@@ -79,7 +78,7 @@ export default function TestimonialsSection() {
       rating: 5,
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face&q=80",
       achievement: "Business Plan Winner",
-      location: "Philadelphia, PA", 
+      location: "Philadelphia, PA",
       testimonialType: "Career Guidance",
       gradient: "from-orange-500 to-red-500"
     },
@@ -100,7 +99,7 @@ export default function TestimonialsSection() {
     {
       id: 6,
       name: "Yusuf Ibrahim",
-      role: "Pre-Med Student", 
+      role: "Pre-Med Student",
       university: "University of Michigan",
       universityShort: "U-M",
       quote: "The stress management tools and Islamic meditation guides got me through MCAT prep while maintaining my spiritual practices. The community features connected me with other Muslim pre-med students.",
@@ -123,17 +122,17 @@ export default function TestimonialsSection() {
 
   return (
     <section className="section-padding container-padding relative overflow-hidden" id="testimonials">
-      
+
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-r from-neural-950 via-neural-900/30 to-neural-950" />
       <div className="absolute inset-0 bg-neural-pattern opacity-5" />
-      
+
       {/* Floating Elements */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-r from-secondary-500/10 to-primary-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        
+
         {/* Section Header */}
         <div className="text-center mb-20">
           <h2 className="font-display font-bold mb-8">
@@ -166,7 +165,7 @@ export default function TestimonialsSection() {
 
         {/* Testimonials Carousel */}
         <div className="relative">
-          
+
           {/* Navigation Buttons */}
           <button
             onClick={() => swiperRef.current?.swiper.slidePrev()}
@@ -181,7 +180,7 @@ export default function TestimonialsSection() {
           >
             <FiChevronLeft className="w-6 h-6 text-white group-hover:-translate-x-0.5 transition-transform duration-300" />
           </button>
-          
+
           <button
             onClick={() => swiperRef.current?.swiper.slideNext()}
             className="
@@ -227,16 +226,16 @@ export default function TestimonialsSection() {
             {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id} className="!w-auto">
                 <div className="w-full max-w-2xl mx-4">
-                  
+
                   {/* Testimonial Card */}
                   <div className="relative glass-morphism-strong rounded-3xl p-8 md:p-12 border border-white/10 group hover:border-white/20 transition-all duration-500">
-                    
+
                     {/* Background Gradient */}
                     <div className={`
                       absolute inset-0 bg-gradient-to-br ${testimonial.gradient}/5 
                       opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl
                     `} />
-                    
+
                     {/* Quote Icon */}
                     <div className="absolute top-6 left-6">
                       <div className={`
@@ -257,27 +256,27 @@ export default function TestimonialsSection() {
                         {testimonial.testimonialType}
                       </div>
                     </div>
-                    
+
                     <div className="relative z-10 pt-12">
-                      
+
                       {/* Star Rating */}
                       <div className="flex justify-center mb-8">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <FiStar 
-                            key={i} 
-                            className="w-6 h-6 text-yellow-400 fill-current mx-1" 
+                          <FiStar
+                            key={i}
+                            className="w-6 h-6 text-yellow-400 fill-current mx-1"
                           />
                         ))}
                       </div>
-                      
+
                       {/* Quote */}
                       <blockquote className="text-xl md:text-2xl text-white/90 mb-10 italic leading-relaxed font-light text-center">
                         "{testimonial.quote}"
                       </blockquote>
-                      
+
                       {/* Author Info */}
                       <div className="flex items-center justify-center space-x-6">
-                        
+
                         {/* Profile Image */}
                         <div className="relative">
                           <img
@@ -294,7 +293,7 @@ export default function TestimonialsSection() {
                             <HiAcademicCap className="w-4 h-4 text-white" />
                           </div>
                         </div>
-                        
+
                         {/* Details */}
                         <div className="text-center">
                           <h4 className="text-white font-bold text-lg mb-1">
@@ -329,7 +328,7 @@ export default function TestimonialsSection() {
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             {['MIT', 'Stanford', 'Harvard', 'Wharton', 'UC Berkeley', 'U-M'].map((uni, index) => (
-              <div 
+              <div
                 key={uni}
                 className="px-6 py-3 glass-morphism rounded-xl border border-white/5 hover:border-white/20 transition-all duration-300 hover:scale-105"
               >
@@ -340,6 +339,8 @@ export default function TestimonialsSection() {
             ))}
           </div>
         </div>
+       
+
       </div>
 
       {/* Custom Swiper Styles */}

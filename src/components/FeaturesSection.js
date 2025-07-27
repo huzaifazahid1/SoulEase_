@@ -26,64 +26,101 @@ export default function FeaturesSection() {
     {
       id: 1,
       icon: <FiMic className="w-8 h-8" />,
-      title: "AI Career Oracle",
-      description: "Advanced AI counseling that aligns your career path with Islamic principles and personal values, providing personalized guidance for your professional journey.",
+      title: "AI Career Navigator",
+      description:
+        "AI-powered guidance that blends Islamic principles with modern analytics to map your career path, suggest skills, and guide your long-term professional journey.",
       gradient: "from-blue-600 via-purple-600 to-indigo-600",
       bgGradient: "from-blue-500/10 to-purple-500/10",
       borderGradient: "from-blue-500/50 to-purple-500/50",
-      features: ["Career path analysis", "Skills assessment", "Industry insights", "Goal setting"]
+      features: [
+        "Personalized AI career plans",
+        "Skills & strengths mapping",
+        "Industry & future insights",
+        "Islamic values alignment"
+      ]
     },
     {
       id: 2,
       icon: <FiBookOpen className="w-8 h-8" />,
-      title: "Spiritual Journal Pro",
-      description: "AI-guided reflection sessions combining Quranic wisdom with modern psychological insights for deeper spiritual growth and self-understanding.",
-      gradient: "from-emerald-600 via-teal-600 to-green-600",
-      bgGradient: "from-emerald-500/10 to-teal-500/10",
-      borderGradient: "from-emerald-500/50 to-teal-500/50",
-      features: ["Daily reflections", "Quranic insights", "Mood tracking", "Progress analytics"]
-    },
-    {
-      id: 3,
-      icon: <FiMic className="w-8 h-8" />,
-      title: "Advanced Mood Analytics",
-      description: "Sophisticated emotional pattern analysis with Islamic therapeutic recommendations and personalized coping strategies.",
+      title: "Emotional AI Tracker",
+      description:
+        "Advanced AI mood tracking with beautiful visualizations and tailored recommendations for emotional balance, combining Islamic therapy and modern science.",
       gradient: "from-purple-600 via-pink-600 to-rose-600",
       bgGradient: "from-purple-500/10 to-pink-500/10",
       borderGradient: "from-purple-500/50 to-pink-500/50",
-      features: ["Emotion tracking", "Pattern recognition", "Therapeutic suggestions", "Weekly reports"]
+      features: [
+        "AI-driven emotion tracking",
+        "Visual emotional insights",
+        "Personalized healing tips",
+        "Weekly well-being reports"
+      ]
+    },
+    {
+      id: 3,
+      icon: <FiBookOpen className="w-8 h-8" />,
+      title: "Sacred Knowledge Hub",
+      description:
+        "Your digital library for Quran, Hadith, and Duas with powerful search and daily inspiration, crafted to keep you connected with authentic Islamic wisdom.",
+      gradient: "from-emerald-600 via-teal-600 to-green-600",
+      bgGradient: "from-emerald-500/10 to-teal-500/10",
+      borderGradient: "from-emerald-500/50 to-teal-500/50",
+      features: [
+        "Quran verses & tafsir",
+        "Authentic Hadith access",
+        "Powerful dua collection",
+        "Search & daily reminders"
+      ]
     },
     {
       id: 4,
       icon: <FiUsers className="w-8 h-8" />,
-      title: "Sacred Community",
-      description: "Connect with like-minded Muslim students in verified, safe discussion spaces designed for meaningful spiritual and academic growth.",
+      title: "Mentor & Healing Space",
+      description:
+        "Safe community spaces where brothers, sisters, and imams guide you with emotional support, Islamic mentorship, and mental well-being activities.",
       gradient: "from-orange-600 via-red-600 to-pink-600",
       bgGradient: "from-orange-500/10 to-red-500/10",
       borderGradient: "from-orange-500/50 to-red-500/50",
-      features: ["Peer support groups", "Study circles", "Mentorship program", "Event coordination"]
+      features: [
+        "Verified mentor guidance",
+        "Faith-based healing",
+        "Peer discussion circles",
+        "1-to-1 imam sessions"
+      ]
     },
     {
       id: 5,
       icon: <FiMic className="w-8 h-8" />,
       title: "Divine Audio Library",
-      description: "Curated Quranic recitations, guided meditations, and calming soundscapes designed to enhance focus and spiritual connection.",
+      description:
+        "Curated Quran recitations, relaxing sounds, and guided meditations to uplift your focus, connect spiritually, and create a peaceful study environment.",
       gradient: "from-indigo-600 via-blue-600 to-cyan-600",
       bgGradient: "from-indigo-500/10 to-blue-500/10",
       borderGradient: "from-indigo-500/50 to-blue-500/50",
-      features: ["Quran recitations", "Guided meditations", "Nature sounds", "Study playlists"]
+      features: [
+        "Quranic recitations",
+        "Meditation guidance",
+        "Focus soundscapes",
+        "Study-friendly playlists"
+      ]
     },
     {
       id: 6,
       icon: <HiSparkles className="w-8 h-8" />,
-      title: "Holistic Wellness Hub",
-      description: "Comprehensive integration of mental health, spiritual growth, and academic success in one unified platform.",
+      title: "Holistic Success Hub",
+      description:
+        "All-in-one system for personal growth, mental health balance, and academic progress powered by Islamic lifestyle habits and modern goal-tracking.",
       gradient: "from-pink-600 via-rose-600 to-red-600",
       bgGradient: "from-pink-500/10 to-rose-500/10",
       borderGradient: "from-pink-500/50 to-rose-500/50",
-      features: ["Wellness tracking", "Goal integration", "Progress monitoring", "Success metrics"]
+      features: [
+        "Wellness & balance tools",
+        "Faith-based goal setting",
+        "Performance tracking",
+        "Progress visual analytics"
+      ]
     }
-  ]
+  ];
+  
 
   // Intersection Observer for scroll animations
   useEffect(() => {

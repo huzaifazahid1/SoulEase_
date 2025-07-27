@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { HiSparkles, HiBars3, HiXMark } from 'react-icons/hi2'
 import { FiArrowRight } from 'react-icons/fi'
-
+import Link from 'next/link'
 /**
  * Navigation Component
  * 
@@ -221,7 +221,9 @@ export default function Navigation() {
                 
                 {/* Button content */}
                 <div className="relative z-10 flex items-center space-x-2">
+                  <Link href="/dashboard">
                   <span>Get Started</span>
+                  </Link>
                   <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </button>

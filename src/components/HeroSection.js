@@ -25,7 +25,7 @@ export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
-  
+
   // Refs
   const heroRef = useRef(null)
   const swiperRef = useRef(null)
@@ -34,15 +34,17 @@ export default function HeroSection() {
   const heroSlides = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop&crop=center&q=80",
-      title: "Transform Your Mental Journey",
+      // image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop&crop=center&q=80",
+      video:"./hero.mp4",
+      title: "Transform your Journey",
       subtitle: "Where Faith Meets AI Innovation",
       description: "Discover clarity through Islamic wisdom and cutting-edge technology",
       gradient: "from-emerald-900/90 via-primary-900/80 to-secondary-900/70"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=1920&h=1080&fit=crop&crop=center&q=80",
+      // image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=1920&h=1080&fit=crop&crop=center&q=80",
+      video:"./hero2.mp4",
       title: "Find Your Purpose",
       subtitle: "Career Clarity Through Spiritual Growth",
       description: "AI-powered guidance rooted in Islamic principles",
@@ -50,7 +52,8 @@ export default function HeroSection() {
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=1920&h=1080&fit=crop&crop=center&q=80",
+      // image: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=1920&h=1080&fit=crop&crop=center&q=80",
+      video:"./hero.mp4",
       title: "From Anxiety to Peace",
       subtitle: "Your Journey Starts Here",
       description: "Anonymous, secure, and spiritually aligned mental health support",
@@ -96,32 +99,32 @@ export default function HeroSection() {
    */
   const useAnimatedCounter = (end, duration = 2000) => {
     const [count, setCount] = useState(0)
-    
+
     useEffect(() => {
       if (!isLoaded) return
-      
+
       let startTime = null
       const startValue = 0
-      
+
       const animate = (currentTime) => {
         if (startTime === null) startTime = currentTime
         const elapsed = currentTime - startTime
         const progress = Math.min(elapsed / duration, 1)
-        
+
         // Easing function for smooth animation
         const easeOutQuart = 1 - Math.pow(1 - progress, 4)
         const currentCount = startValue + (end - startValue) * easeOutQuart
-        
+
         setCount(Math.floor(currentCount))
-        
+
         if (progress < 1) {
           requestAnimationFrame(animate)
         }
       }
-      
+
       requestAnimationFrame(animate)
     }, [end, duration, isLoaded])
-    
+
     return count
   }
 
@@ -136,11 +139,11 @@ export default function HeroSection() {
   }
 
   return (
-    <section 
+    <section
       ref={heroRef}
-      className="relative h-screen overflow-hidden bg-neural-950"
+      className="relative overflow-hidden bg-neural-950"
       id="hero"
-      role="banner"
+      role="banner" style={{ minHeight: "100vh" }}
     >
       {/* Background Slider */}
       <div className="absolute inset-0 z-0">
@@ -161,17 +164,30 @@ export default function HeroSection() {
             <SwiperSlide key={slide.id}>
               <div className="relative w-full h-full">
                 {/* Background Image with Parallax */}
-                <div 
+                {/* <div 
                   className="absolute inset-0 bg-cover bg-center transform transition-transform duration-1000"
                   style={{
                     backgroundImage: `url(${slide.image})`,
                     transform: `translate(${(mousePosition.x - 50) * 0.02}px, ${(mousePosition.y - 50) * 0.02}px) scale(1.1)`
                   }}
-                />
-                
+                /> */}
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-1000"
+                  style={{
+                    transform: `translate(${(mousePosition.x - 50) * 0.02}px, ${(mousePosition.y - 50) * 0.02}px) scale(1.1)`
+                  }}
+                >
+                  <source src={slide.video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
                 {/* Gradient Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient}`} />
-                
+
                 {/* Neural Pattern Overlay */}
                 <div className="absolute inset-0 bg-neural-pattern opacity-20" />
               </div>
@@ -183,35 +199,35 @@ export default function HeroSection() {
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-primary-500/20 to-accent-500/20 rounded-full blur-2xl animate-float" />
-        <div 
-          className="absolute top-40 right-32 w-24 h-24 bg-gradient-to-r from-secondary-500/20 to-primary-500/20 rounded-full blur-2xl animate-float" 
+        <div
+          className="absolute top-40 right-32 w-24 h-24 bg-gradient-to-r from-secondary-500/20 to-primary-500/20 rounded-full blur-2xl animate-float"
           style={{ animationDelay: '2s' }}
         />
-        <div 
-          className="absolute bottom-40 left-40 w-40 h-40 bg-gradient-to-r from-accent-500/20 to-secondary-500/20 rounded-full blur-2xl animate-float" 
+        <div
+          className="absolute bottom-40 left-40 w-40 h-40 bg-gradient-to-r from-accent-500/20 to-secondary-500/20 rounded-full blur-2xl animate-float"
           style={{ animationDelay: '4s' }}
         />
       </div>
 
       {/* Main Content */}
       <div className="relative z-20 flex items-center justify-center h-full container-padding">
-        <div className="text-center max-w-6xl mx-auto">
-          
+        <div className="text-center max-w-6xl mx-auto" style={{ marginTop: "85px" }}>
+
           {/* Trust Badge */}
           <div className={`
             mb-8 inline-flex items-center space-x-3 px-6 py-3 
             glass-morphism rounded-full border border-white/20
             ${isLoaded ? 'animate-fade-in-down' : 'opacity-0'}
-          `}>
+          `} >
             <HiSparkles className="w-5 h-5 text-primary-400 animate-pulse" />
             <span className="text-sm font-medium text-white/90">
               Trusted by <span className="text-primary-400 font-semibold">25,000+</span> Students Worldwide
             </span>
             <div className="flex space-x-1">
               {[...Array(5)].map((_, i) => (
-                <FiStar 
-                  key={i} 
-                  className="w-4 h-4 text-yellow-400 fill-current" 
+                <FiStar
+                  key={i}
+                  className="w-4 h-4 text-yellow-400 fill-current"
                 />
               ))}
             </div>
@@ -226,13 +242,13 @@ export default function HeroSection() {
                   key={`${currentSlide}-${i}`}
                   className={`
                     inline-block mr-4 mb-2
-                    ${i % 2 === 0 
-                      ? 'text-white' 
+                    ${i % 2 === 0
+                      ? 'text-white'
                       : 'text-gradient-primary'
                     }
                     ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}
                   `}
-                  style={{ 
+                  style={{
                     animationDelay: `${i * 200 + 300}ms`,
                     animationFillMode: 'forwards'
                   }}
@@ -241,7 +257,7 @@ export default function HeroSection() {
                 </span>
               ))}
             </div>
-            
+
             {/* Subtitle */}
             <div className={`
               text-4xl md:text-6xl mt-6 font-light text-primary-400
@@ -264,9 +280,9 @@ export default function HeroSection() {
             flex flex-col sm:flex-row gap-6 justify-center items-center mb-16
             ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}
           `} style={{ animationDelay: '1200ms', animationFillMode: 'forwards' }}>
-            
+
             {/* Primary CTA */}
-            <button 
+            <button
               onClick={() => scrollToSection('features')}
               className="
                 group relative overflow-hidden
@@ -281,10 +297,10 @@ export default function HeroSection() {
             >
               {/* Animated background */}
               <div className="absolute inset-0 bg-gradient-to-r from-accent-600 to-primary-600 translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
-              
+
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              
+
               {/* Button content */}
               <div className="relative z-10 flex items-center space-x-3">
                 <span>Start Your Journey</span>
@@ -312,6 +328,7 @@ export default function HeroSection() {
           </div>
 
           {/* Statistics */}
+          {/*
           <div className={`
             grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto
             ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}
@@ -321,7 +338,7 @@ export default function HeroSection() {
               
               return (
                 <div key={stat.label} className="text-center group">
-                  {/* Icon */}
+             
                   <div className="
                     inline-flex items-center justify-center w-16 h-16 mb-4
                     bg-gradient-to-br from-primary-500/20 to-accent-500/20
@@ -334,19 +351,19 @@ export default function HeroSection() {
                     </div>
                   </div>
                   
-                  {/* Number */}
+             
                   <div className="text-3xl md:text-4xl font-bold text-gradient-primary mb-2">
                     {count.toLocaleString()}{stat.suffix}
                   </div>
                   
-                  {/* Label */}
+             
                   <div className="text-white/60 text-sm font-medium">
                     {stat.label}
                   </div>
                 </div>
               )
             })}
-          </div>
+          </div>  */}
         </div>
       </div>
 
@@ -359,8 +376,8 @@ export default function HeroSection() {
               onClick={() => swiperRef.current?.swiper.slideTo(index)}
               className={`
                 h-2 rounded-full transition-all duration-300
-                ${index === currentSlide 
-                  ? 'w-12 bg-primary-400' 
+                ${index === currentSlide
+                  ? 'w-12 bg-primary-400'
                   : 'w-8 bg-white/30 hover:bg-white/50'
                 }
               `}
@@ -383,7 +400,7 @@ export default function HeroSection() {
       >
         <FiChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />
       </button>
-      
+
       <button
         onClick={() => swiperRef.current?.swiper.slideNext()}
         className="
