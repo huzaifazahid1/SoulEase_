@@ -82,10 +82,10 @@ export default function DashboardLayout({ children }) {
       name: 'Journal & Mood',
       icon: PenTool,
       children: [
-        { name: 'Emotion Tracker', href: '/mentor/journal', icon: Heart },
-        { name: 'New Entry', href: '/mentor/journal/entry', icon: Calendar },
-        { name: 'Analytics', href: '/mentor/journal/analytics', icon: BarChart3 },
-        { name: 'History', href: '/mentor/journal/history', icon: History }
+        { name: 'Emotion Tracker', href: '/journal', icon: Heart },
+        { name: 'New Entry', href: '/journal/entry', icon: Calendar },
+        { name: 'Analytics', href: '/journal/analytics', icon: BarChart3 },
+        { name: 'History', href: '/journal/history', icon: History }
       ]
     }
   ];
