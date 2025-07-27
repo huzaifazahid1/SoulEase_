@@ -278,10 +278,7 @@ vercel env add NEXT_PUBLIC_QURAN_API_URL
 
 ### Environment Variables Setup
 Configure the following in your deployment platform:
-- `GROK_API_KEY`: Your Grok AI API key
-- `NEXT_PUBLIC_QURAN_API_URL`: Quran API endpoint
-- `NEXT_PUBLIC_HADITH_API_URL`: Hadith API endpoint
-- `NEXT_PUBLIC_APP_URL`: Production app URL
+- `NEXT_PUBLIC_GROQ_API_KEY`: Your Grok AI API key
 
 ### Build Optimization
 ```bash
@@ -343,9 +340,9 @@ npm install --save-dev @next/bundle-analyzer
 - ✅ **Commercial Licensing**: Available for businesses and organizations
 
 ### Contact for Licensing
-- **Email**: licensing@soulease.com
-- **Business Inquiries**: business@soulease.com
-- **Partnership**: partnerships@soulease.com
+- **Email**: zahidhuzaifa006@gmail.com
+- **Business Inquiries**: zahidhuzaifa006@gmail.com
+- **Partnership**: zahidhuzaifa006@gmail.com
 
 ## 🛠️ Development & Contributing
 
