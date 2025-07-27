@@ -73,7 +73,7 @@ export default function DashboardPage() {
       title: 'Mood Journal',
       description: 'Track emotions and reflect on your spiritual journey',
       icon: PenTool,
-      href: '/mentor/journal',
+      href: '/journal',
       gradient: 'from-orange-600 to-red-600',
       stats: 'Log today\'s mood',
       color: 'orange'
@@ -103,7 +103,7 @@ export default function DashboardPage() {
     {
       title: 'New Journal Entry',
       icon: Calendar,
-      href: '/mentor/journal/entry',
+      href: '/journal/entry',
       color: 'from-orange-500 to-pink-500'
     }
   ];
