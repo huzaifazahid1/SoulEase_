@@ -223,8 +223,9 @@ export default function Navigation() {
                 <div className="relative z-10 flex items-center space-x-2">
                   <Link href="/dashboard">
                   <span>Get Started</span>
-                  </Link>
+                  
                   <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
                 </div>
               </button>
             </div>
@@ -318,7 +319,9 @@ export default function Navigation() {
                 shadow-lg shadow-primary-600/25 
                 animate-fade-in-up focus-visible
               " style={{ animationDelay: '500ms' }}>
+                <Link href="/dashboard">
                 Get Started Free
+                </Link>
               </button>
             </div>
           </div>
